@@ -83,6 +83,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 - **ESPN** – for inspiring the analytics experience  
 - **Roboflow + YOLOv5** – for model training support and object detection  
 - **NBA stats datasets** – cleaned and compiled from public sources
+- **[abdullahtarek/basketball_analysis](https://github.com/abdullahtarek/basketball_analysis)** – for foundational ideas and structure around basketball stat overlays and player detection
 
 ---
 
