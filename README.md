@@ -30,66 +30,64 @@ NBA Vision360 is a real-time AI-based video analytics system that turns raw bask
 
 ## 🛠️ Tech Stack
 
-| Layer             | Tools & Libraries                                  |
-|------------------|----------------------------------------------------|
-| Language         | Python                                             |
-| CV/OCR           | OpenCV, YOLOv5, pytesseract                        |
-| ML/Stats         | scikit-learn, pandas, NumPy                        |
-| Audio            | Edge-TTS                                           |
-| Visualization    | OpenCV overlays, circular stat rings               |
-| Data             | Custom JSON stat feeds, CSV coefficients           |
+**Language**: Python  
+**Computer Vision & OCR**: OpenCV, YOLOv5, pytesseract  
+**ML/Stats**: scikit-learn, pandas, NumPy  
+**Audio**: Edge-TTS  
+**Data**: Custom JSON stat feeds, CSV coefficients  
+**Visualization**: OpenCV overlays (stat rings, fatigue metrics)
 
 ---
+
 ## 📂 Folder Structure
 
+<pre>
 NBA-Vision360/
-├── main.py # Entry point
-├── predictor.py # Win probability engine
-├── commentary/ # Edge-TTS commentary system
-├── Rating/ # Player rating logic
-├── court_keypoint_detector/ # Homography & tactical conversion
-├── score_detector/ # Scoreboard OCR
-├── team_assigner/, trackers/ # Player tracking logic
+├── main.py                         # Entry point
+├── predictor.py                   # Win probability engine
+├── commentary/                    # Edge-TTS commentary system
+├── Rating/                        # Player rating logic
+├── court_keypoint_detector/      # Homography & tactical conversion
+├── score_detector/               # Scoreboard OCR
+├── team_assigner/, trackers/     # Player tracking logic
 ├── heat_map_players/, speed_and_distance_calculator/
 ├── pass_and_interception_detector/, ball_acquisition/
-├── input_videos/ # (sample game clips)
+├── input_videos/                 # (sample game clips)
 ├── requirements.txt
 ├── README.md
+</pre>
 
 ---
-▶️ Running the Project
-bash
-Copy
-Edit
-python main.py --input input_videos/sample_game.mp4
-What you'll see:
 
-✅ Overlaid player stats
-
-📉 Real-time win probability
-
-🎤 AI-generated voice commentary
 ---
-📌 Roadmap
- Win probability + rating model
 
- TTS commentary engine
+## 📌 Roadmap
 
- Scoreboard OCR + quarter tracking
+- [x] Win probability + rating model  
+- [x] TTS commentary engine  
+- [x] Scoreboard OCR + quarter tracking  
+- [ ] Assist prediction engine *(in progress)*  
+- [ ] Real-time Web UI or Streamlit demo  
+- [ ] Support for multiple camera angles  
 
- Assist prediction engine (in progress)
-
- Real-time Web UI or Streamlit demo
-
- Support for multiple camera angles
-
-📄 License
-This project is licensed under the MIT License. See LICENSE for details.
-
-🙌 Acknowledgements
-ESPN for inspiring the analytics experience
-
-Roboflow + YOLO community
-
-NBA stat datasets (cleaned and compiled)
 ---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for full details.
+
+---
+
+## 🙌 Acknowledgements
+
+- **ESPN** – for inspiring the analytics experience  
+- **Roboflow + YOLOv5** – for model training support and object detection  
+- **NBA stats datasets** – cleaned and compiled from public sources
+
+---
+
+## 🔗 Connect
+
+**Built by:** [Sairam Bisoyi](https://linkedin.com/in/sairambisoyi) • B.Tech Civil Engineering, IIT Guwahati  
+📧 Email: [sairmb2007.21@gmail.com](mailto:sairmb2007.21@gmail.com)  
+🐙 GitHub: [@sairambisoyi](https://github.com/sairambisoyi)
