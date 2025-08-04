@@ -86,8 +86,3 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-## 🔗 Connect
-
-**Built by:** [Sairam Bisoyi](https://linkedin.com/in/sairambisoyi) • B.Tech Civil Engineering, IIT Guwahati  
-📧 Email: [sairmb2007.21@gmail.com](mailto:sairmb2007.21@gmail.com)  
-🐙 GitHub: [@sairambisoyi](https://github.com/sairambisoyi)
