@@ -1,0 +1,9 @@
+__pycache__/
+venv/
+output/
+output_videos/
+output_heatmaps/
+*.pyc
+.DS_Store
+*.log
+input_videos/*   

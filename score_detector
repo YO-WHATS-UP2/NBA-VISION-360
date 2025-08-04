@@ -1,0 +1,87 @@
+import numpy as np
+import cv2
+from utils.bbox_utils import get_foot_position
+from tactical_view_convertor.tactical_view_converter import TacticalViewConverter
+
+
+class ScoreDetector:
+    def __init__(self, tactical_converter: TacticalViewConverter, hoop_side="right"):
+        self.tactical_converter = tactical_converter
+        self.hoop_x_threshold = 220 if hoop_side == "right" else 80
+        self.hoop_side = hoop_side
+        self.previous_ball_positions = []
+
+    def is_inside_3_point_area(self, pos):
+        """Returns True if x position is outside the 3-point arc"""
+        x, y = pos
+        if self.hoop_side == "right":
+            return x < self.hoop_x_threshold - 26  # ~6.75m from hoop in pixels
+        else:
+            return x > self.hoop_x_threshold + 26
+
+    def detect_scores(self, court_keypoints, player_tracks, ball_tracks):
+        """
+        Detect scores (+2 or +3) using ball positions and tactical transformed coordinates.
+
+        Args:
+            court_keypoints (list): Output from CourtKeypointDetector.get_court_keypoints()
+            player_tracks (list): List of dicts with player_id → bbox for each frame
+            ball_tracks (list): List of (x, y) or None for each frame
+
+        Returns:
+            List of tuples: (frame_idx, score_type: "+2"/"+3")
+        """
+        transformed_players = self.tactical_converter.transform_players_to_tactical_view(
+            court_keypoints, player_tracks
+        )
+
+        scores = []
+
+        for frame_idx, ball in enumerate(ball_tracks):
+            if ball is None or not isinstance(ball, (list, tuple)) or len(ball) != 2:
+                continue
+
+            self.previous_ball_positions.append(ball)
+
+            if len(self.previous_ball_positions) < 5:
+                continue
+
+            # Get y-positions and check for downward motion
+            y_positions = [pos[1] for pos in self.previous_ball_positions if isinstance(pos, (list, tuple)) and len(pos) == 2]
+
+            if len(y_positions) < 5 or not (y_positions[-1] > y_positions[-2] > y_positions[-3]):
+                continue
+
+            # Transform ball to tactical view
+            current_keypoints = court_keypoints[frame_idx]
+            if current_keypoints is None:
+                continue
+
+            detected_points = current_keypoints.xy.tolist()[0]
+            valid_indices = [i for i, kp in enumerate(detected_points) if kp[0] > 0 and kp[1] > 0]
+
+            if len(valid_indices) < 4:
+                continue
+
+            src = np.array([detected_points[i] for i in valid_indices], dtype=np.float32)
+            dst = np.array([self.tactical_converter.key_points[i] for i in valid_indices], dtype=np.float32)
+
+            try:
+                h_matrix, _ = cv2.findHomography(src, dst)
+                ball_tactical = cv2.perspectiveTransform(np.array([[ball]], dtype=np.float32), h_matrix)[0][0]
+
+                # Hoop-side logic
+                if self.hoop_side == "right" and ball_tactical[0] >= self.hoop_x_threshold - 5:
+                    shot_type = "+3" if self.is_inside_3_point_area(ball_tactical) else "+2"
+                    scores.append((frame_idx, shot_type))
+                    self.previous_ball_positions.clear()
+
+                elif self.hoop_side == "left" and ball_tactical[0] <= self.hoop_x_threshold + 5:
+                    shot_type = "+3" if self.is_inside_3_point_area(ball_tactical) else "+2"
+                    scores.append((frame_idx, shot_type))
+                    self.previous_ball_positions.clear()
+
+            except Exception:
+                continue
+
+        return scores
