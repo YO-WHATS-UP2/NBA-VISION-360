@@ -1,0 +1,31 @@
+{
+  "Efficiency": [
+    "{player} is posting a stellar PER of {PER} this season.",
+    "With a PER of {PER}, {player} is clearly the engine of this team.",
+    "{player} is averaging {PPG} points per game with a {3P%}% shooting clip from three."
+  ],
+  "Defense": [
+    "{player} contributes on both ends, averaging {stl} steals and {blk} blocks.",
+    "Defensively, {player} owns a defensive rating of {drtg} and {stlp}% steal rate.",
+    "{player} is making it tough in the paint — already with {ba} shots altered and {blk} blocks this season."
+  ],
+  "Offense": [
+    "{player} leads the charge with {PPG} PPG and {APG} APG.",
+    "{player} has scored {pts} points this season, averaging {PPG} per game.",
+    "Offensively, {player} boasts a usage rate of {usgp}% and offensive rating of {ortg}."
+  ],
+  "Advanced": [
+    "{player} has a VORP of {vorp}, highlighting his all-around impact.",
+    "Win Shares for {player} this season sit at {ows} offensive and {dws} defensive — elite numbers.",
+    "{player}'s On/Off rating per 100 possessions is {onOff100}, a game-changer when he's on the floor."
+  ],
+  "Totals": [
+    "{player} has played {gp} games this season and started all {gs} of them.",
+    "In {gp} games, {player} has grabbed {drb} defensive boards and dished out {ast} assists.",
+    "{player} has logged {min} minutes this season, showing his durability."
+  ],
+  "PerGameExtended": [
+    "{player} is averaging {PPG} points, {APG} assists, and {TRBPG} rebounds per game.",
+    "{player} contributes across the board: {PPG} PPG, {APG} APG, {TRBPG} RPG, and a {3P%}% 3PT rate."
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "Dunk": [
+    "{player} takes flight and delivers a thunderous dunk!",
+    "What a slam! {player} hammers it down with {force}.",
+    "{player} drives the lane and detonates at the rim!",
+    "{player} soars in from the {angle} and throws it down!",
+    "{player} explodes to the basket and finishes strong!"
+  ],
+  "ThreePointer": [
+    "{player} pulls up from downtown... splash!",
+    "That’s a deep three from {player} — nothing but net!",
+    "{player} steps back and launches... got it!",
+    "{player} drains the triple from the {angle}!",
+    "Cash! {player} nails the three with ease."
+  ],
+  "Layup": [
+    "{player} glides to the rim and lays it in gently.",
+    "Nice drive by {player}, smooth finish off the glass.",
+    "{player} slips past the defense and scores the layup.",
+    "Easy two for {player} on that cut to the basket.",
+    "{player} gets the step and drops it in!"
+  ],
+  "Interception": [
+    "{player} jumps the passing lane and picks it clean!",
+    "Interception! {player} reads the play perfectly.",
+    "Heads-up defense by {player} — that’s a clean steal!",
+    "{player} breaks up the play and takes off running!",
+    "{player} snatches it away and flips the momentum."
+  ],
+  "Block": [
+    "Big denial by {player}! That shot had no chance.",
+    "{player} says no at the rim — huge rejection!",
+    "That’s a statement block by {player}!",
+    "{player} meets the ball mid-air and swats it away!",
+    "Rim protection 101 by {player} — massive stuff!"
+  ],
+  "Rebound": [
+    "{player} climbs the ladder for the rebound.",
+    "Board secured by {player} — that’s hustle!",
+    "{player} boxes out perfectly and pulls it down.",
+    "{player} controls the glass on that play.",
+    "{player} with the cleanup duty inside."
+  ],
+  "Assist": [
+    "{player} threads the needle with that pass!",
+    "Great vision from {player} to set up the score.",
+    "Dime dropped! {player} with the perfect feed.",
+    "That’s an elite assist from {player}.",
+    "Beautiful ball movement capped by {player}’s pass."
+  ],
+  "FastBreak": [
+    "{player} is off to the races at {speed} km/h!",
+    "Speed burst from {player} — coast to coast!",
+    "{player} accelerates down the court on the break!",
+    "Nobody’s catching {player} on that fast break.",
+    "Pure pace from {player} — finishes it himself!"
+  ],
+  "Turnover": [
+    "{player} loses control — that’s a turnover.",
+    "Unforced error by {player}, and the ball goes the other way.",
+    "{player} coughs it up — tough mistake.",
+    "Miscommunication leads to a turnover by {player}.",
+    "That one slipped right out of {player}'s hands."
+  ],
+  "Foul": [
+    "Whistle on the play — foul committed by {player}.",
+    "{player} gets caught reaching in.",
+    "{player} picks up the foul trying to slow things down.",
+    "That’s {player}’s second foul of the game.",
+    "Contact on the drive — {player} called for it."
+  ],
+  "FreeThrow": [
+    "{player} steps to the line and sinks the first.",
+    "{player} calmly drains both free throws.",
+    "Swish — {player} is money from the line.",
+    "No mistake from {player}, he converts at the stripe.",
+    "{player} keeps the lead steady with those free throws."
+  ],
+  "JumpBall": [
+    "It’s a jump ball — {player} goes up for it.",
+    "{player} wins the tip cleanly.",
+    "Battle in the air! {player} gets the touch.",
+    "Tied up — jump ball situation with {player} involved.",
+    "{player} and opponent go vertical — toss-up time!"
+  ],
+  "Timeout": [
+    "Timeout called — {team} wants to talk it over.",
+    "{team} burns a timeout to slow the momentum.",
+    "Tactical pause from {team}.",
+    "Momentum shift forces {team} to regroup.",
+    "A smart timeout by {team} after that run."
+  ],
+  "BuzzerBeater": [
+    "At the buzzer... {player} hits it!",
+    "{player} lets it fly... it’s good! Buzzer beater!",
+    "Incredible! {player} nails the shot as time expires.",
+    "Cold-blooded from {player} — clutch!",
+    "Drama to end the quarter — {player} delivers!"
+  ]
+}
